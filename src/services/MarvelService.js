@@ -28,6 +28,7 @@ class MarvelService {
 
         return {
             // name: res.data.results[0].name,
+            id: char.id,
             name: char.name,
             description: descr === '' ? descr = "There's no information about this character." : descr,
             thumbnail: char.thumbnail.path + '.' + char.thumbnail.extension,
