@@ -117,7 +117,7 @@ const View = ({char}) => {
             </div>
             <div className="char__comics">Comics:</div>
             <ul className="char__comics-list">
-                {comics.length > 0 ? null : 'There is no comics with this character'}
+                {/* {comics.length > 0 ? null : 'There is no comics with this character'}
                 {
                     comics.map((item, i) => {
                         //если много таких элементов тогда лучше не использовать такой цикл а переписать на обычный что бы использовать break потому что будет просаживаться производительность нужно не мутировать а создавать новый массив
@@ -128,6 +128,15 @@ const View = ({char}) => {
                             </li>
                         )
                     })
+                } */}
+                {
+                comics.length > 0 ? null : 'There is no comics with this character'}
+                {
+                    comics.slice(0, 5).map((item, i) => (
+                        <li key={i} className="char__comics-item">
+                            {item.name}
+                        </li>
+                    ))
                 }
             </ul>
         </>
